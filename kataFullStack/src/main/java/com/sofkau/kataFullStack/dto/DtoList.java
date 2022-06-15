@@ -1,36 +1,29 @@
-package com.sofkau.kataFullStack.model;
-
-
-import javax.persistence.*;
+package com.sofkau.kataFullStack.dto;
 
 /**
- * Entidad list, creacion de la tabla list
+ * clase dto para que el usuario no
+ * haga contacto directo con la entidad
  *
  * @author Juan David Rivera </juandavidnaranjo75@gmail.com>
  * @version v1.0.0
  * @since v1.0.0
  */
-@Entity
-@Table(name = "list")
-public class ModList {
+public class DtoList {
 
     /**
-     * atributo id, clave primaria
+     * atributo id
      */
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     /**
      * atributo nombre de la lista
      */
-    @Column(length = 300, nullable = false, name = "list_name")
     private String listName;
 
     /**
      * Controlador vacio
      */
-    public ModList() {
+    public DtoList() {
     }
 
     /**
@@ -38,7 +31,7 @@ public class ModList {
      *
      * @param id - recibe el id
      */
-    public ModList(Long id) {
+    public DtoList(Long id) {
         this.id = id;
     }
 
@@ -47,7 +40,7 @@ public class ModList {
      *
      * @param listName - recibe el nombre de la lista
      */
-    public ModList(String listName) {
+    public DtoList(String listName) {
         this.listName = listName;
     }
 
@@ -57,7 +50,7 @@ public class ModList {
      * @param id       - recibe el id
      * @param listName - recibe el nombre de la lista
      */
-    public ModList(Long id, String listName) {
+    public DtoList(Long id, String listName) {
         this.id = id;
         this.listName = listName;
     }
@@ -97,5 +90,4 @@ public class ModList {
     public void setListName(String listName) {
         this.listName = listName;
     }
-
 }
