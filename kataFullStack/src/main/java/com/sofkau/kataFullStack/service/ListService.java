@@ -1,8 +1,9 @@
-package com.sofkau.kataFullStack.Service;
+package com.sofkau.kataFullStack.service;
 
 import com.sofkau.kataFullStack.model.ModList;
 import com.sofkau.kataFullStack.repository.IListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
@@ -14,6 +15,7 @@ import java.util.ArrayList;
  * @version 1.0.0
  * @since 1.0.0
  */
+@Service
 public class ListService {
 
     /**

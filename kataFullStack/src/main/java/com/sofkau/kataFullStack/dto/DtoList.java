@@ -1,5 +1,8 @@
 package com.sofkau.kataFullStack.dto;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 /**
  * clase dto para que el usuario no
  * haga contacto directo con la entidad
@@ -18,6 +21,8 @@ public class DtoList {
     /**
      * atributo nombre de la lista
      */
+    @NotBlank
+    @Size(max = 300)
     private String listName;
 
     /**
