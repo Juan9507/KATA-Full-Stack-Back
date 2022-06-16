@@ -25,4 +25,14 @@ public class ConList {
     public ArrayList<DtoList> obtenerListDto() {
         return listService.obtenerListDto();
     }
+
+    @DeleteMapping(path = "/{id}")
+    public String eliminarListaPorId(@PathVariable("id") Long id) {
+        boolean ok = this.listService.eliminarLista(id);
+        if (ok) {
+            return "Se eliminó el usuario con id " + id;
+        } else {
+            return "No pudo eliminar el usuario con id" + id;
+        }
+    }
 }
