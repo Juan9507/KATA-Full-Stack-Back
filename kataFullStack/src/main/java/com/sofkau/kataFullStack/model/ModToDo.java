@@ -10,14 +10,15 @@ import javax.persistence.*;
  * @since v1.0.0
  */
 @Entity
-@Table(name = "todo_list")
+@Table(name = "lista_tarea")
 public class ModToDo {
 
     /**
      * atributo id, clave primaria
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private Long id;
 
     /**
@@ -31,8 +32,8 @@ public class ModToDo {
      * muchas tareas pueden pertenecer a una sola lista
      */
     @ManyToOne(optional = false)
-    @JoinColumn(name = "id_list")
-    private ModList list;
+    @JoinColumn(name = "id_lista")
+    private ModList lista;
 
     /**
      * Constructor vacio
@@ -64,10 +65,10 @@ public class ModToDo {
      * @param id     - recibe el id
      * @param tareas - recibe la tarea
      */
-    public ModToDo(Long id, String tareas, ModList list) {
+    public ModToDo(Long id, String tareas, ModList lista) {
         this.id = id;
         this.tareas = tareas;
-        this.list = list;
+        this.lista = lista;
     }
 
     /**
@@ -112,7 +113,7 @@ public class ModToDo {
      * @return
      */
     public ModList getList() {
-        return list;
+        return lista;
     }
 
     /**
@@ -121,6 +122,6 @@ public class ModToDo {
      * @param list - recibe el objeto
      */
     public void setList(ModList list) {
-        this.list = list;
+        this.lista = list;
     }
 }

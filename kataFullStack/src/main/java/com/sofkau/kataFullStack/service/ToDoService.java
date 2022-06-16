@@ -1,5 +1,6 @@
 package com.sofkau.kataFullStack.service;
 
+import com.sofkau.kataFullStack.model.ModList;
 import com.sofkau.kataFullStack.model.ModToDo;
 import com.sofkau.kataFullStack.repository.IToDoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,4 @@ public class ToDoService {
      */
     @Autowired
     private IToDoRepository iTodoRepository;
-
-    ArrayList<ModToDo> obtenerToDo() {
-        return (ArrayList<ModToDo>) iTodoRepository.findAll();
-    }
 }

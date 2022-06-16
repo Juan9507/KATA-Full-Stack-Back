@@ -11,20 +11,21 @@ import javax.persistence.*;
  * @since v1.0.0
  */
 @Entity
-@Table(name = "list")
+@Table(name = "lista")
 public class ModList {
 
     /**
      * atributo id, clave primaria
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private Long id;
 
     /**
      * atributo nombre de la lista
      */
-    @Column(length = 300, nullable = false, name = "list_name")
+    @Column(name = "lista_name")
     private String listName;
 
     /**

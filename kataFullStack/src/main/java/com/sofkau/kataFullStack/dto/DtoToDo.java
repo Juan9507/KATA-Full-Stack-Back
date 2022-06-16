@@ -26,7 +26,7 @@ public class DtoToDo {
     /**
      * Relacion muchos a uno
      */
-    private ModList list;
+    private ModList lista;
 
     /**
      * Constructor vacio
@@ -58,10 +58,10 @@ public class DtoToDo {
      * @param id     - recibe el id
      * @param tareas - recibe la tarea
      */
-    public DtoToDo(Long id, String tareas, ModList list) {
+    public DtoToDo(Long id, String tareas, ModList lista) {
         this.id = id;
         this.tareas = tareas;
-        this.list = list;
+        this.lista = lista;
     }
 
     public Long getId() {
@@ -101,15 +101,15 @@ public class DtoToDo {
      * @return
      */
     public ModList getList() {
-        return list;
+        return lista;
     }
 
     /**
      * Setter para el objeto de la lista
      *
-     * @param list - recibe el objeto
+     * @param lista - recibe el objeto
      */
-    public void setList(ModList list) {
-        this.list = list;
+    public void setList(ModList lista) {
+        this.lista = lista;
     }
 }
