@@ -1,7 +1,11 @@
 package com.sofkau.kataFullStack.model;
 
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Entidad list, creacion de la tabla list
@@ -25,8 +29,15 @@ public class ModList {
     /**
      * atributo nombre de la lista
      */
-    @Column(name = "lista_name")
+    @Column(name = "lista_name", nullable = false)
     private String listName;
+
+    /**
+     * Hacer referencia a la tabla del many
+     */
+    @OnDelete(action= OnDeleteAction.CASCADE)
+    @OneToMany(mappedBy = "lista")
+    private List<ModToDo> toDoList;
 
     /**
      * Controlador vacio
@@ -64,6 +75,19 @@ public class ModList {
     }
 
     /**
+     * Constructor con todos los parametros
+     *
+     * @param id
+     * @param listName
+     * @param modToDo
+     */
+    /*public ModList(Long id, String listName, List<ModToDo> modToDo) {
+        this.id = id;
+        this.listName = listName;
+        this.modToDo = modToDo;
+    }*/
+
+    /**
      * obtener el id
      *
      * @return
@@ -99,4 +123,21 @@ public class ModList {
         this.listName = listName;
     }
 
+    /**
+     * Getter que retorna la lista del objeto ModToDo
+     *
+     * @return - retorna la lista
+     */
+    /*public List<ModToDo> getModToDo() {
+        return modToDo;
+    }*/
+
+    /**
+     * Setter para modificar la lista  del objeto ModToDo
+     *
+     * @param modToDo - recibe la lista
+     */
+    /*public void setModToDo(List<ModToDo> modToDo) {
+        this.modToDo = modToDo;
+    }*/
 }

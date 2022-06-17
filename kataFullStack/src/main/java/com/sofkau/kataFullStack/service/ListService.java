@@ -20,6 +20,7 @@ import java.util.List;
  * @since 1.0.0
  */
 @Service
+@Validated
 public class ListService {
 
     /**

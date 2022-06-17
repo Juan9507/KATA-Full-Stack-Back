@@ -24,8 +24,14 @@ public class ModToDo {
     /**
      * atributo nombre de la lista
      */
-    @Column(length = 300, nullable = false, name = "tareas")
-    private String tareas;
+    @Column(length = 300, nullable = false, name = "task")
+    private String task;
+
+    /**
+     * Atributo completado
+     */
+    @Column(nullable = false, name = "complete")
+    private Boolean complete;
 
     /**
      * Relacion muchos a uno
@@ -53,21 +59,33 @@ public class ModToDo {
     /**
      * Constructor con un parametro
      *
-     * @param tareas - recibe la tarea
+     * @param task - recibe la tarea
      */
-    public ModToDo(String tareas) {
-        this.tareas = tareas;
+    public ModToDo(String task) {
+        this.task = task;
     }
 
     /**
      * Constructor cons todos los parametros
      *
      * @param id     - recibe el id
-     * @param tareas - recibe la tarea
+     * @param task - recibe la tarea
      */
-    public ModToDo(Long id, String tareas, ModList lista) {
+    public ModToDo(Long id, String task, Boolean complete, ModList lista) {
         this.id = id;
-        this.tareas = tareas;
+        this.task = task;
+        this.complete = complete;
+        this.lista = lista;
+    }
+
+    /**
+     * Constructor cons todos los parametros
+     *
+     * @param task - recibe la tarea
+     * @param lista - recibe el id de la tarea
+     */
+    public ModToDo(String task, ModList lista) {
+        this.task = task;
         this.lista = lista;
     }
 
@@ -94,8 +112,8 @@ public class ModToDo {
      *
      * @return - retorna la tarea
      */
-    public String getTareas() {
-        return tareas;
+    public String getTask() {
+        return task;
     }
 
     /**
@@ -103,8 +121,24 @@ public class ModToDo {
      *
      * @param tareas - recibe la tarea
      */
-    public void setTareas(String tareas) {
-        this.tareas = tareas;
+    public void setTask(String tareas) {
+        this.task = tareas;
+    }
+
+    /**
+     * Getter para saber si la tarea esta completa
+     * @return - devuelve un boleano
+     */
+    public Boolean getComplete() {
+        return complete;
+    }
+
+    /**
+     * Setter para modificar la tarea si esta completa o no
+     * @param complete - recibe un valor boleano
+     */
+    public void setComplete(Boolean complete) {
+        this.complete = complete;
     }
 
     /**
@@ -112,16 +146,17 @@ public class ModToDo {
      *
      * @return
      */
-    public ModList getList() {
+    public ModList getLista() {
         return lista;
     }
 
     /**
      * Setter para el objeto de la lista
      *
-     * @param list - recibe el objeto
+     * @param lista - recibe el objeto
      */
-    public void setList(ModList list) {
-        this.lista = list;
+    public void setLista(ModList lista) {
+        this.lista = lista;
     }
+
 }

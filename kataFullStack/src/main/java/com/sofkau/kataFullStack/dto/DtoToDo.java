@@ -21,7 +21,12 @@ public class DtoToDo {
     /**
      * atributo nombre de la lista
      */
-    private String tareas;
+    private String task;
+
+    /**
+     * Atributo boleano para saber si la atrea esta completada
+     */
+    private Boolean complete;
 
     /**
      * Relacion muchos a uno
@@ -49,20 +54,33 @@ public class DtoToDo {
      * @param tareas - recibe la tarea
      */
     public DtoToDo(String tareas) {
-        this.tareas = tareas;
+        this.task = tareas;
     }
 
     /**
      * Constructor cons todos los parametros
      *
      * @param id     - recibe el id
-     * @param tareas - recibe la tarea
+     * @param task - recibe la tarea
      */
-    public DtoToDo(Long id, String tareas, ModList lista) {
+    public DtoToDo(Long id, String task, Boolean complete, ModList lista) {
         this.id = id;
-        this.tareas = tareas;
+        this.task = task;
+        this.complete = complete;
         this.lista = lista;
     }
+
+    /**
+     * Constructor cons todos los parametros
+     *
+     * @param lista   - recibe el id de la lista
+     * @param task - recibe la tarea
+     */
+    public DtoToDo(String task, ModList lista) {
+        this.task = task;
+        this.lista = lista;
+    }
+
 
     public Long getId() {
         return id;
@@ -82,8 +100,8 @@ public class DtoToDo {
      *
      * @return - retorna la tarea
      */
-    public String getTareas() {
-        return tareas;
+    public String getTask() {
+        return task;
     }
 
     /**
@@ -91,8 +109,24 @@ public class DtoToDo {
      *
      * @param tareas - recibe la tarea
      */
-    public void setTareas(String tareas) {
-        this.tareas = tareas;
+    public void setTask(String tareas) {
+        this.task = tareas;
+    }
+
+    /**
+     * Getter para saber si la tarea esta completa
+     * @return - devuelve un boleano
+     */
+    public Boolean getComplete() {
+        return complete;
+    }
+
+    /**
+     * Setter para modificar la tarea si esta completa o no
+     * @param complete - recibe un valor boleano
+     */
+    public void setComplete(Boolean complete) {
+        this.complete = complete;
     }
 
     /**
@@ -100,7 +134,7 @@ public class DtoToDo {
      *
      * @return
      */
-    public ModList getList() {
+    public ModList getLista() {
         return lista;
     }
 
@@ -109,7 +143,7 @@ public class DtoToDo {
      *
      * @param lista - recibe el objeto
      */
-    public void setList(ModList lista) {
+    public void setLista(ModList lista) {
         this.lista = lista;
     }
 }

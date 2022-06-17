@@ -1,7 +1,10 @@
 package com.sofkau.kataFullStack.dto;
 
+import com.sofkau.kataFullStack.model.ModToDo;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 /**
  * clase dto para que el usuario no
@@ -24,6 +27,8 @@ public class DtoList {
     @NotBlank
     @Size(max = 300)
     private String listName;
+
+    private List<ModToDo> modToDo;
 
     /**
      * Controlador vacio
@@ -60,6 +65,12 @@ public class DtoList {
         this.listName = listName;
     }
 
+    /*public DtoList(Long id, String listName, List<ModToDo> modToDo){
+        this.id = id;
+        this.listName = listName;
+        this.modToDo = modToDo;
+    }*/
+
     /**
      * obtener el id
      *
@@ -95,4 +106,12 @@ public class DtoList {
     public void setListName(String listName) {
         this.listName = listName;
     }
+
+    /*public List<ModToDo> getModToDo() {
+        return modToDo;
+    }*/
+
+    /*public void setModToDo(List<ModToDo> modToDo) {
+        this.modToDo = modToDo;
+    }*/
 }
