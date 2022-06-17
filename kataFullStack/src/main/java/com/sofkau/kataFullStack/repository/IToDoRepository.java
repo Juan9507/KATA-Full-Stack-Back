@@ -19,6 +19,11 @@ import java.util.ArrayList;
 @Repository
 public interface IToDoRepository extends CrudRepository<ModToDo, Long> {
 
+    /**
+     * Sentencia sql para traer las tareas con el id de la lista
+     * @param id - recibe el id
+     * @return - retorna la lista
+     */
     @Query(value = "SELECT * FROM lista_tarea WHERE id_lista = ?1", nativeQuery = true)
     public abstract ArrayList<ModToDo> findAllId(Long id);
 }

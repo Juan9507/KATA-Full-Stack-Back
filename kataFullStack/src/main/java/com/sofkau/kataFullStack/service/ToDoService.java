@@ -1,15 +1,12 @@
 package com.sofkau.kataFullStack.service;
 
-import com.sofkau.kataFullStack.dto.DtoList;
 import com.sofkau.kataFullStack.dto.DtoToDo;
-import com.sofkau.kataFullStack.model.ModList;
 import com.sofkau.kataFullStack.model.ModToDo;
 import com.sofkau.kataFullStack.repository.IToDoRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,6 +47,11 @@ public class ToDoService {
         return (ArrayList<DtoToDo>) modelMapper.map(modToDo,dtoToDo.getClass());
     }
 
+    /**
+     * Obtener las tareas con el id de la lista
+     * @param id - recibe el id
+     * @return - devuelve la lista
+     */
     public ArrayList<DtoToDo> obtenerToDoAllId(Long id){
         List<ModToDo> modToDo = new ArrayList<>();
         List<DtoToDo> dtoToDo = new ArrayList<>();

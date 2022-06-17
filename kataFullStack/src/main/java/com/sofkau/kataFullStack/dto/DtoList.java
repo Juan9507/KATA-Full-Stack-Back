@@ -65,12 +65,6 @@ public class DtoList {
         this.listName = listName;
     }
 
-    /*public DtoList(Long id, String listName, List<ModToDo> modToDo){
-        this.id = id;
-        this.listName = listName;
-        this.modToDo = modToDo;
-    }*/
-
     /**
      * obtener el id
      *
@@ -107,11 +101,4 @@ public class DtoList {
         this.listName = listName;
     }
 
-    /*public List<ModToDo> getModToDo() {
-        return modToDo;
-    }*/
-
-    /*public void setModToDo(List<ModToDo> modToDo) {
-        this.modToDo = modToDo;
-    }*/
 }

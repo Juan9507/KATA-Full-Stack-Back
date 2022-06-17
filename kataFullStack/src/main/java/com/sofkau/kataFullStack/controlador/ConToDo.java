@@ -4,6 +4,7 @@ import com.sofkau.kataFullStack.dto.DtoToDo;
 import com.sofkau.kataFullStack.service.ToDoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.ArrayList;
 
 /**
@@ -22,6 +23,7 @@ public class ConToDo {
 
     /**
      * Obtener todas las tareas
+     *
      * @return
      */
     @GetMapping("")
@@ -33,23 +35,24 @@ public class ConToDo {
      * Obtener tareas con el id de la lista
      */
     @GetMapping(path = "/{id}")
-    public ArrayList<DtoToDo> obtenerToDoAllId(@PathVariable("id") Long id){
+    public ArrayList<DtoToDo> obtenerToDoAllId(@PathVariable("id") Long id) {
         return toDoService.obtenerToDoAllId(id);
     }
 
     /**
      * Guardar una tarea
+     *
      * @param dtoToDo - recibe el body
      * @return - devuelve la creacion
      */
     @PostMapping("/save")
     public DtoToDo create(@RequestBody DtoToDo dtoToDo) {
-
         return this.toDoService.create(dtoToDo);
     }
 
     /**
      * Eliminar una tarea
+     *
      * @param id - recibe el id de
      * @return - devuelve el mensaje
      */

@@ -8,6 +8,10 @@ import java.util.ArrayList;
 
 /**
  * Controlador para los end point de las listas
+ *
+ * @author Juan David Rivera Naranjo </juandavidnaranjo75@gmail.com>
+ * @version 1.0.0
+ * @since 1.0.0
  */
 @CrossOrigin
 @RestController
