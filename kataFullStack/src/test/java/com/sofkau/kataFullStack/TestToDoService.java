@@ -23,10 +23,9 @@ public class TestToDoService {
     ToDoService toDoService;
 
     @Test
-    public void contraintsValidationExceptionTest() {
-        // roleServiseImplemet.create(new RoleDto(null));
+    public void validarCreacion() {
         ModList modList = new ModList(3L);
-        DtoToDo tareaRegistrada =  toDoService.create(new DtoToDo("repasar", modList));
+        DtoToDo tareaRegistrada =  toDoService.create(new DtoToDo("repasar",false, modList));
         assertNotNull(tareaRegistrada);
     }
 }

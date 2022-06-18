@@ -81,6 +81,12 @@ public class DtoToDo {
         this.lista = lista;
     }
 
+    public DtoToDo(String task, Boolean complete, ModList lista) {
+        this.task = task;
+        this.complete = complete;
+        this.lista = lista;
+    }
+
 
     public Long getId() {
         return id;
