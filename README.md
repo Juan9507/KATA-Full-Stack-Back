@@ -1,4 +1,4 @@
-# KATA-Full-Stack-Back
+# KATA-Full-Stack-Back Spring boot - javaScript
 Backend reto kata , crear rest api para un to do list
 
 #VIDEO ACTUALIZADO, YA QUE EL QUE SUBI A LA PLATAFORMA SE DISTORCIONO
